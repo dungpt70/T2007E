@@ -1,3 +1,4 @@
+-- Tải file .env_main và bỏ đuôi _main và copy vào project để chạy
 --29/06/2021
 - Code migration: books, categories
 - Chức năng:
