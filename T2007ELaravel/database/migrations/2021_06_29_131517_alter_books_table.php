@@ -13,6 +13,12 @@ class AlterBooksTable extends Migration
      */
     public function up()
     {
+        /*
+        // tạo thủ tục 1
+        DB::statement('create proc a()');
+        // tạo thủ tục 2
+        DB::statement('create proc b()');
+        */
         Schema::table('books', function (Blueprint $table){
             $table->foreignId('category_id');
         });

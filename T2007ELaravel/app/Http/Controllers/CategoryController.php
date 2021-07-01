@@ -25,7 +25,7 @@ class CategoryController extends Controller
             // điều hướng theo uri
             //return redirect('/category');
             // điều hướng dựa vào name của route
-            return redirect()->route('category');
+            return redirect()->route('category')->with('message','Thêm mới thành công');;
         } else 
             echo "<h1>Them moi that bai</h1>";
     }
@@ -37,7 +37,45 @@ class CategoryController extends Controller
         return view('category.index', compact('list'));
     }
     
-    
+    function edit($id){
+        // lay record theo id
+        $chuyennganh = DB::table('categories')->find($id);
+        // tra ve giao dien cung record vua tim duoc
+        if(!empty($chuyennganh)){
+            return view('category.edit', compact('chuyennganh'));
+        } else {
+            echo "<h1>Category not found</h1>";
+        }
+    }
+    function update(Request $request){
+        // validate server
+        // nhận data từ form client
+        $id = $request->id;
+        $macn = $request->code;
+        $tencn = $request->name;
+        // cap nhat vào bảng category
+        $result = DB::table('categories')
+                    ->where('id', $id)
+                    ->update(["code"=>$macn, "name"=>$tencn]);
+        
+        if ($result){
+            // điều hướng trả về trang danh sách chuyên ngành
+            // truyền đi biến flash session: chỉ tồn tại theo request/ response
+            return redirect()->route('category')->with('message','Cập nhật thành công');
+        } else {
+            return redirect('/category/'.$id.'/edit')->with('message','Cập nhật không thành công');
+        }
+    }
+    function destroy(Request $request){
+        $id = $request->id;
+        // xoa thang
+        $result = DB::table('categories')->delete($id);
+        if ($result){
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
     
     
     

@@ -47,9 +47,17 @@ Route::get('/hello2/{classname}/{username}', [HelloController::class, "xinchao2"
  + model(*)
  + view: danhsachsv.blade.php
  * */
+// them moi
  Route::get('/category/create', [CategoryController::class, 'create']);
  Route::post('/category/create', [CategoryController::class, 'store'])->name('category.themmoi');
+ // hien thi danh sach
  Route::get('/category', [CategoryController::class, 'index'])->name('category');
+ // cap nhat
+ Route::get('/category/{id}/edit',[CategoryController::class, 'edit']);
+ Route::put('/category/edit',[CategoryController::class, 'update'])->name('category.capnhat');
+ // xóa
+ Route::delete('/category/delete',[CategoryController::class, 'destroy'])->name('category.xoa');
+ 
 
 
 

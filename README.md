@@ -18,4 +18,23 @@
 -> route: /category (get)
 -> controller: CategoryController (index)
 -> views: category/index.blade.php
+-> model:
+- 01/07/2021: ( sửa, xóa ajax):
+ + Sửa 1 chuyên ngành
+++ hiển thị form sửa bản ghi chuyên ngành
+-> route: /category/{id}/edit (get)
+-> controller: CategoryController (edit)
+-> views: category/edit.blade.php
+-> model: 
+++ cập nhật thông tin chuyên ngành sửa từ giao diện lên server
+-> route: /category/edit (put)
+-> controller: CategoryController (update)
+-> views: category/edit.blade.php
+-> model: 
+
++ Xóa category:
+++ Xóa
+-> route: /category/delete (delete)
+-> controller: CategoryController (destroy)
+-> views: category/index.blade.php
 -> model: 
