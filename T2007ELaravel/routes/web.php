@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,10 @@ Route::get('/hello2/{classname}/{username}', [HelloController::class, "xinchao2"
  Route::put('/category/edit',[CategoryController::class, 'update'])->name('category.capnhat');
  // xóa
  Route::delete('/category/delete',[CategoryController::class, 'destroy'])->name('category.xoa');
+ 
+ // quan ly sach
+ Route::resource("/book", BookController::class); // tương ứng với 7 uri
+ 
  
 
 

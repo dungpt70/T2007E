@@ -38,3 +38,8 @@
 -> controller: CategoryController (destroy)
 -> views: category/index.blade.php
 -> model: 
+
+- 03/07/2021:
++ tạo model
++ resouce
++ crud book

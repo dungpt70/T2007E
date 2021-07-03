@@ -1,8 +1,12 @@
 eclipse.preferences.version=1
+encoding//app/Http/Controllers/BookController.php=UTF-8
 encoding//app/Http/Controllers/CategoryController.php=UTF-8
 encoding//app/Http/Controllers/HelloController.php=UTF-8
+encoding//app/Models/Book.php=UTF-8
 encoding//database/migrations/2014_10_12_000000_create_users_table.php=UTF-8
 encoding//database/migrations/2021_06_29_131517_alter_books_table.php=UTF-8
+encoding//resources/views/book/create.blade.php=UTF-8
+encoding//resources/views/book/index.blade.php=UTF-8
 encoding//resources/views/category/create.blade.php=UTF-8
 encoding//resources/views/category/edit.blade.php=UTF-8
 encoding//resources/views/category/index.blade.php=UTF-8
