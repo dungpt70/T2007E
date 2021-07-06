@@ -20,7 +20,7 @@ Route::get('/', function () {
     // validate
     // dB
     // logic
-    return view('welcome');
+    return view('admin_layout.template');
 });
 Route::get('/hello', [HelloController::class, "xinchao"]);
 Route::get('/hello2/{classname}/{username}', [HelloController::class, "xinchao2"]);

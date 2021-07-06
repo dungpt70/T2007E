@@ -14,7 +14,7 @@ class Book extends Model
     public $timestamps = false;
     
     // 1 book tương ứng 1 chuyên ngành
-    public function ChuyenNganh(){
+    public function Cate(){
         return $this->belongsTo(Category::class, "category_id", "id");
     }
     

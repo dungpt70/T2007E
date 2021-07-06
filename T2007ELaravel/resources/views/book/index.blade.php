@@ -42,7 +42,7 @@
               <td>{{ $item->author }}</td>
               <td>{{ $item->price }}</td>
               <td>{{ $item->publish }}</td>
-              <td>{{ $item->ChuyenNganh->name }}</td>
+              <td>{{ $item->Cate->name }}</td>
               <td>
               	@php
               		$url_edit = "/book/".$item->id."/edit";

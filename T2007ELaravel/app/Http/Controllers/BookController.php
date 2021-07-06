@@ -54,7 +54,20 @@ class BookController extends Controller
         echo "store";
         // thực hiện thêm mới => route
         // 1. từ request: validate server
-        
+        $validated = $request->validate([
+            "tensach" => ["required", "min:10", "max:500"],
+            "author" => "required|max:100",
+            "title"=>["required", "max:500"],
+            "price"=> "required|numeric|min:0.0",
+            "publish"=>"required"
+        ],[
+            "tensach.required"=>"Trường tên sách không được để trống",
+            "tensach.min"=>"Trường tên sách độ dài tối thiểu là 10 ký tự",
+            "tensach.max"=>"Trường tên sách độ dài tối đa là 500 ký tự",
+            "price.required"=>"Trường giá không được để trống",
+            "price.numeric"=>"Trường giá phải là số",
+            "price.min"=>"Trường giá phải là số >= 0",
+        ]);
         // 2. tạo đối tượng (save) hoặc tạo mảng (create)
         $obj = new Book();
         $obj->name = $request->tensach;

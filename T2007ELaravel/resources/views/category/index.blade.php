@@ -1,12 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-    <body>
-    <div class="container">
+@extends('admin_layout.template')
+	@section('content')
     	<h1>Danh sách category</h1>
     	<a class="btn btn-danger" href="{{ url('/category/create') }}">Thêm mới</a>
     	
@@ -46,11 +39,6 @@
             @endforeach
           </tbody>
         </table>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	
 	<script type="text/javascript">
 		function deleteRecord(id){
 			if (confirm("Bạn có chắc chắn muốn xóa hay không?")){
@@ -74,5 +62,4 @@
 			}
 		}
 	</script>
-    </body>
-</html>
+	@endsection

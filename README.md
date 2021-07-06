@@ -43,3 +43,9 @@
 + tạo model
 + resouce
 + crud book
+- 06/07/2021:
++ validate server: 
+->validate theo request (submit), 
+->validate theo object request (make:request)
+->validate Validate::make (ajax)
++ ghep theme + chia layout
