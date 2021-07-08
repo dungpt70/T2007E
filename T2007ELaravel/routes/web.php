@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +22,9 @@ Route::get('/', function () {
     // validate
     // dB
     // logic
-    return view('admin_layout.template');
+    return view('home');
 });
+
 Route::get('/hello', [HelloController::class, "xinchao"]);
 Route::get('/hello2/{classname}/{username}', [HelloController::class, "xinchao2"]);
 //Route::get('/monhoc/create',[])
@@ -60,30 +63,9 @@ Route::get('/hello2/{classname}/{username}', [HelloController::class, "xinchao2"
  Route::delete('/category/delete',[CategoryController::class, 'destroy'])->name('category.xoa');
  
  // quan ly sach
- Route::resource("/book", BookController::class); // tương ứng với 7 uri
- 
- 
+ Route::resource("/book", BookController::class)->middleware('auth'); // tương ứng với 7 uri
+ Route::get('/dashboard', [HomeController::class,'dashboard']);
 
+Auth::routes();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

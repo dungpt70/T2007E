@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
+    // khai baos thoa man 1 hoac nhieu middleware cho ca controller
+    function __construct(){
+        $this->middleware('auth');
+    }
     function create(){
         // views: category/create.blade.php
         return view('category.create');

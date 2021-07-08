@@ -18,13 +18,16 @@ class BookController extends Controller
     {
         // trả về trang hiển thị danh sách => view (index)
         //1. lấy dữ liệu
-        $books = Book::all();
+        //Book::all(): lấy tất cả bản ghi trong bảng books
+        //$books = Book::all();
+        // paginate(1): mỗi trang chỉ trả về tối đa 1 bản ghi
+        $books = Book::paginate(1);
         /*
         $books = DB::table('books')->join('categories', 'books.category_id','=','categories.id')
         ->select(['books.name','books.title','books.author','books.id','books.price','books.publish','categories.name as cate_name'])
             ->get();
             */
-        var_dump($books);
+        //dd($books);
         //2. trả về view
         return view('book.index', compact('books'));
     }

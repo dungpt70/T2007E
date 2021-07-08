@@ -49,3 +49,9 @@
 ->validate theo object request (make:request)
 ->validate Validate::make (ajax)
 + ghep theme + chia layout
+
+- 08/07/2021:
+-> phân trang
+-> authentication sử dụng auth scaffolding bootstrap
+-> middleware
+-> Auth
